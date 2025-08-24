@@ -1,0 +1,32 @@
+# מערכת
+.DS_Store
+Thumbs.db
+
+# Node / JS
+node_modules/
+npm-debug.log*
+yarn-*.log
+pnpm-debug.log*
+
+# בניות
+dist/
+build/
+*.log
+
+# Vite / React
+apps/client/dist/
+
+# סביבות
+.env
+.env.*
+!.env.example
+
+# כיסוי בדיקות
+coverage/
+
+# IDE
+.vscode/
+.idea/
+
+# קבצי נעילה (לא להתעלם!)
+# נשאיר package-lock.json בקומיט

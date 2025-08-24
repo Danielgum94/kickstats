@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* --- בסיס --- */
+:root {
+  color-scheme: dark;
+  --c-bg: #0B1220;
+  --c-text: #F3F6F9;
+  --c-card: rgba(255,255,255,0.04);
+  --c-border: rgba(255,255,255,0.08);
+  --c-accent: #00E5A8;
+  --font-he: 'Heebo', 'Noto Sans Hebrew', Arial, sans-serif;
+  --font-en: 'Inter', system-ui, 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+html, body, #root { height: 100%; }
+body {
+  background: var(--c-bg);
+  color: var(--c-text);
+  font-family: var(--font-he);
+}
+
+:lang(en), .en {
+  font-family: var(--font-en);
+  letter-spacing: .1px; /* מרווח עדין לאנגלית */
+}
+
+/* --- קונטיינר/גריד בסיס --- */
+.page {
+  @apply container py-6 space-y-6;
+}
+.section-title { @apply text-2xl font-extrabold tracking-tight; }
+.subtle { @apply text-muted text-sm; }
+
+/* --- כרטיס --- */
+.card {
+  @apply rounded-2xl p-5 border shadow-soft;
+  background: var(--c-card);
+  border-color: var(--c-border);
+}
+
+/* --- כפתורים --- */
+.btn {
+  @apply inline-flex items-center gap-2 px-4 py-2 rounded-2xl border transition select-none;
+  border-color: var(--c-border);
+}
+.btn:hover { border-color: color-mix(in oklab, var(--c-accent) 60%, white 0%); }
+
+.btn-primary {
+  @apply inline-flex items-center gap-2 px-4 py-2 rounded-2xl font-semibold shadow-soft;
+  background: linear-gradient(135deg, var(--c-accent), #55CCFF);
+  color: #05111A;
+}
+.btn-ghost { @apply bg-transparent; }
+
+/* --- שדות --- */
+.select, .input {
+  @apply bg-transparent border rounded-2xl px-3 py-2 text-[15px];
+  border-color: var(--c-border);
+}
+.select:focus, .input:focus { @apply outline-none; border-color: var(--c-accent); }
+
+/* --- תגיות/סטטיסטיקות --- */
+.badge { @apply inline-flex items-center gap-1 text-xs px-2 py-1 rounded-full; background: var(--c-card); border: 1px solid var(--c-border); }
+.stat { @apply text-3xl font-extrabold; }
+
+/* --- שלד טעינה --- */
+.skel {
+  @apply rounded-lg animate-pulse;
+  background: linear-gradient(90deg, rgba(255,255,255,.08), rgba(255,255,255,.15), rgba(255,255,255,.08));
+  background-size: 200% 100%;
+}
+
+/* --- סקרולבר עדין --- */
+*::-webkit-scrollbar { width: 10px; height: 10px; }
+*::-webkit-scrollbar-thumb { background: var(--c-border); border-radius: 999px; }

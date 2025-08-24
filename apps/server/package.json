@@ -1,0 +1,16 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "cors": "^2.x",
+    "express": "^5.x"
+  },
+  "devDependencies": {
+    "nodemon": "^3.x"
+  }
+}
